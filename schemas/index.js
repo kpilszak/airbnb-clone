@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import property from "./property";
+
+export const schemaTypes = [property]
