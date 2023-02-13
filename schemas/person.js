@@ -7,7 +7,7 @@ export default {
             name: 'name',
             title: 'Name',
             type: 'string',
-            description: 'Please use "Firstname LastName" format'
+            description: 'Please use "Firstname Lastname" format'
         }, 
         {
             name: 'slug',
@@ -28,5 +28,10 @@ export default {
             title: 'Image',
             type: 'image'
         }
-    ]
+    ],
+    preview: {
+        select: {
+            title: 'name', media: 'image'
+        }
+    }
 }
