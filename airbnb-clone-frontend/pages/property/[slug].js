@@ -1,5 +1,6 @@
 import { sanityClient } from '../../sanity';
 import React from 'react';
+import { isMultiple } from "../../utils";
 
 const Property = ({ 
     title,
@@ -15,7 +16,11 @@ const Property = ({
     reviews
  }) => {
     return (
-        <h1>{ title }</h1>
+        <div className="container">
+            <h1><b>{ title }</b></h1>
+            <h2><b>{ propertyType } hosted by { host?.name }</b></h2>
+            <h4>{bedrooms} bedroom{ isMultiple(bedrooms) } * { beds } bed{ isMultiple(beds) }</h4>
+        </div>
     )
 }
 
