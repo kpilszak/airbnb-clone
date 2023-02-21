@@ -15,11 +15,27 @@ const Property = ({
     host,
     reviews
  }) => {
+    const reviewAmount = reviews.length;
+
     return (
         <div className="container">
             <h1><b>{ title }</b></h1>
+            <h4>{reviewAmount} review{isMultiple(reviewAmount)}</h4>
             <h2><b>{ propertyType } hosted by { host?.name }</b></h2>
             <h4>{bedrooms} bedroom{ isMultiple(bedrooms) } * { beds } bed{ isMultiple(beds) }</h4>
+            <hr />
+            <h4><b>Enhanced Clean</b></h4>
+            <p>This host is commited to Airbnb's 5-step enhanced cleaning process</p>
+            <h4><b>Amenities for everyday living</b></h4>
+            <p>The host has equipped this place for long stays - kitchen, shampoo, conditioner, hairdryer included</p>
+            <h4><b>House rules</b></h4>
+            <p>This place isn't suitable for pets and the host does not allow parties or smoking.</p>
+
+            <div className="price-box">
+                <h2>${ pricePerNight }</h2>
+                <h4>{ reviewAmount } review{ isMultiple(reviewAmount) }</h4>
+                <div className="button" onClick={ () => {} }>Change dates</div>
+            </div>
         </div>
     )
 }
