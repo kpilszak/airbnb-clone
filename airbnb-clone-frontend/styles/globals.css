@@ -12,6 +12,16 @@ html, body {
   margin: 20px 50px;
 }
 
+.section {
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.information {
+  width: 60%;
+}
+
 .price-box {
   width: 35%;
   height: 250px;
