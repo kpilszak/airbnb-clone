@@ -2,6 +2,7 @@ import { sanityClient } from '../../sanity';
 import React from 'react';
 import { isMultiple } from '../../utils';
 import Image from '../../components/Image';
+import Review from '../../components/Review';
 
 const Property = ({
     title,
@@ -48,6 +49,13 @@ const Property = ({
                     <div className="button" onClick={() => { }}>Change dates</div>
                 </div>
             </div>
+
+            <hr />
+            <h4 className="">{description}</h4>
+            <hr />
+
+            <h2 className="">{reviewAmount} review{isMultiple(reviewAmount)}</h2>
+            {reviewAmount > 0 && reviews.map((review) => <Review key={review._key} review={review} />)}
 
         </div>
     )
