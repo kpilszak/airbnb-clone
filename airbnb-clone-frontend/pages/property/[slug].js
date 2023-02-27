@@ -3,6 +3,7 @@ import React from 'react';
 import { isMultiple } from '../../utils';
 import Image from '../../components/Image';
 import Review from '../../components/Review';
+import Map from '../../components/Map';
 
 const Property = ({
     title,
@@ -56,6 +57,10 @@ const Property = ({
 
             <h2 className="">{reviewAmount} review{isMultiple(reviewAmount)}</h2>
             {reviewAmount > 0 && reviews.map((review) => <Review key={review._key} review={review} />)}
+
+            <hr />
+            <h2>Location</h2>
+            <Map location={location}></Map>
 
         </div>
     )
