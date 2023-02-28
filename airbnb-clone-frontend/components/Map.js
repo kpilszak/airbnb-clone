@@ -7,6 +7,8 @@ const Map = ({location}) => {
         googleMapsApiKey: process.env.googlePlacesAPI
     })
 
+    console.log('location.lat: ' + location.lat);
+
     const containerStyle = {
         width: '400px',
         height: '400px'
