@@ -1,16 +1,14 @@
 import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
-const Map = ({location}) => {
+const Map = ({ location }) => {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: process.env.googlePlacesAPI
     })
 
-    console.log('location.lat: ' + location.lat);
-
     const containerStyle = {
-        width: '400px',
+        width: '100%',
         height: '400px'
     };
 
@@ -22,16 +20,16 @@ const Map = ({location}) => {
     const [map, setMap] = React.useState(null)
 
     const onLoad = React.useCallback(function callback(map) {
-        // This is just an example of getting and using the map instance!!! don't just blindly copy!
         const bounds = new window.google.maps.LatLngBounds(center);
         map.fitBounds(bounds);
-
         setMap(map)
     }, [])
 
     const onUnmount = React.useCallback(function callback(map) {
         setMap(null)
     }, [])
+
+    const image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
 
     return isLoaded ? (
         <GoogleMap
@@ -41,7 +39,13 @@ const Map = ({location}) => {
             onLoad={onLoad}
             onUnmount={onUnmount}
         >
-            { /* Child components, such as markers, info windows, etc. */}
+            <Marker
+                position={{ lat: location.lat, lon: location.lng }}
+                icon={{
+                    url: image,
+                    anchor: new google.maps.Point(5, 58)
+                }}
+            />
             <></>
         </GoogleMap>
     ) : <></>
