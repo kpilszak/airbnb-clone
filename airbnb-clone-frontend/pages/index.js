@@ -1,4 +1,5 @@
 import React from 'react';
+import { isMultiple } from '../utils';
 import { sanityClient, urlFor } from '../sanity';
 import Link from 'next/link';
 
@@ -14,6 +15,9 @@ const Home = ({ properties }) => {
             {properties.map((property) => (
               <Link href={`property/${property.slug.current}`}><div key={property._id} className="card">
                 <img src={urlFor(property.mainImage)} />
+                <p>{property.reviews.length} rewiev{isMultiple(property.reviews.length)}</p>
+                <h3>{property.title}</h3>
+                <h3><b>${property.pricePerNight}/per night</b></h3>
               </div></Link>
             ))}
           </div>

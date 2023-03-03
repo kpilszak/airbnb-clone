@@ -6,6 +6,20 @@ html, body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+.nav {
+  position: sticky;
+  z-index: 100;
+  box-shadow: rgb(0 0 0 /12%) 0 6px 16px;
+  padding: 30px;
+}
+
+.logo {
+  width: 130px;
+  height: 40px;
+  background-image: url('../images/airbnb-logo.png');
+  background-size: 130px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
