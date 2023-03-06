@@ -79,10 +79,10 @@ html, body {
   overflow: hidden;
 }
 
-/* .main {
+.main {
   display: flex;
   flex-direction: row;
-} */
+}
 
 .feed-container {
   width: 50%;
